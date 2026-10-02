@@ -28,12 +28,15 @@ So far, I've worked with:
 * keyword search
 * hybrid retrieval
 * retrieval pipelines
+* metadata-aware retrieval
 
 The later part of the challenge will move into:
 
-* RAG
+* reranking
 * retrieval evaluation
+* search APIs
 * production concepts
+* RAG
 * building a final retrieval/RAG project
 
 The exact direction may change as I learn more.
@@ -42,7 +45,7 @@ The exact direction may change as I learn more.
 
 ## How this repo works
 
-Each day has its own folder containing the code and a small README explaining what I learned.
+Each day has its own folder containing the code and a small README explaining what I learned along the way.
 
 The challenge is divided into three phases:
 
@@ -63,12 +66,12 @@ phase-2-retrieval-search/
 ├── day-09-hybrid-retrieval/
 └── day-10-retrieval-pipeline/
 
-phase-3-rag/
+phase-3-advanced-retrieval/
 │
-├── day-11-rag-foundations/
-├── day-12-rag-app/
-├── day-13-evaluation/
-├── day-14-production-concepts/
+├── day-11-metadata-retrieval/
+├── day-12-reranking/
+├── day-13-retrieval-evaluation/
+├── day-14-search-api/
 └── day-15-final-project/
 ```
 
@@ -80,29 +83,29 @@ I'm keeping the explanations simple because I want this repository to remain use
 
 ### Phase 1 — Foundations
 
-* [x] Day 01 — First vector database with ChromaDB
-* [x] Day 02 — Understanding embeddings
-* [x] Day 03 — Vector similarity
-* [x] Day 04 — Working with Qdrant
-* [x] Day 05 — Metadata filtering
+* Day 01 — First vector database with ChromaDB
+* Day 02 — Understanding embeddings
+* Day 03 — Vector similarity
+* Day 04 — Working with Qdrant
+* Day 05 — Metadata filtering
 
 ### Phase 2 — Retrieval & Search
 
-* [x] Day 06 — ANN & HNSW
-* [x] Day 07 — Document chunking
-* [x] Day 08 — Semantic search
-* [x] Day 09 — Hybrid retrieval
-* [x] Day 10 — Retrieval pipeline
+* Day 06 — ANN & HNSW
+* Day 07 — Document chunking
+* Day 08 — Semantic search
+* Day 09 — Hybrid retrieval
+* Day 10 — Retrieval pipeline
 
-### Phase 3 — RAG
+### Phase 3 — Advanced Retrieval
 
-* [ ] Day 11 — RAG foundations
-* [ ] Day 12 — Building a RAG app
-* [ ] Day 13 — Retrieval evaluation
-* [ ] Day 14 — Production concepts
-* [ ] Day 15 — Final project
+* Day 11 — Metadata-aware retrieval
+* Day 12 — Reranking
+* Day 13 — Retrieval evaluation
+* Day 14 — Search API
+* Day 15 — Final retrieval/RAG project
 
-**10 / 15 days complete.**
+**11 / 15 days complete.**
 
 ---
 
@@ -121,6 +124,8 @@ Vector Database
    ↓
 Query
    ↓
+Filtering
+   ↓
 Retrieval
    ↓
 Ranking
@@ -136,9 +141,13 @@ Keyword search helps when exact terms matter.
 
 Hybrid retrieval combines both.
 
-And a retrieval pipeline turns these individual techniques into a reusable system.
+Metadata filtering adds structured constraints to the search.
 
-That becomes especially important when building **Retrieval-Augmented Generation (RAG)** systems.
+And a retrieval pipeline brings these individual techniques together into a reusable system.
+
+Day 11 took this further by combining **metadata filtering with semantic similarity**, allowing the search process to first restrict the available documents and then rank the matching results by similarity.
+
+The next part of the challenge will explore how retrieved results can be **reranked, evaluated, and exposed through an API**, before bringing the pieces together into a final system.
 
 ---
 
